@@ -16,5 +16,11 @@ window.addEventListener('keydown', (e)=>{
 
 let keys = document.querySelectorAll('.sound');
 keys.forEach(key => {
-    key.addEventListener('transitionend', (e)=>{e.target.classList.remove("sound_active")})
+
+    key.addEventListener('transitionend', (e)=>{
+
+        if(e.propertyName !== 'transform') {return}
+        e.target.classList.remove("sound_active");
+    });
+
 });

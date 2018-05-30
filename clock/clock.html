@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Clock-Day2</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="clock">
+            <div class="clock__hand clock__hour"></div>
+            <div class="clock__hand clock__seconds"></div>
+        </div>
+    </div>
+
+<script>
+
+    let clock__hour = document.querySelector('.clock__hour');
+    let clock__seconds = document.querySelector('.clock__seconds');
+
+    let setDate = () => {
+
+        const now = new Date();
+
+        const seconds = ((now.getSeconds()/60) * 360) + 90;
+
+        const hour = ((now.getHours()/12) * 360) + 90;
+
+        clock__seconds.style.transform = `rotate(${seconds}deg)`;
+
+
+        clock__hour.style.transform = `rotate(${hour}deg)`;
+
+    }
+
+    setInterval(setDate, 1000);
+
+</script>
+
+</body>
+</html>

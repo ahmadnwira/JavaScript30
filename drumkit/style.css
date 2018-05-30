@@ -20,8 +20,9 @@ p {
 
 .sound {
     display: flex;
-    width: 70px;
-    height: 60px;
+    width: 80px;
+    height: 70px;
+    padding: .25rem;
     margin-right: 2rem;
     justify-content: space-around;
     flex-direction: column;
