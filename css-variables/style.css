@@ -1,0 +1,45 @@
+/* refrences the root of the page which is <html> */
+
+:root {
+    --bg_main: #132e3e;
+    --light: #fff;
+    --color: #FAD6B5;
+    --blur: 0px;
+    --spacing: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--light);
+    background: var(--bg_main);
+
+}
+
+.controls{
+    margin-left: 30%;
+    text-align: center;
+}
+
+.control__element {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-between;
+    max-width: 18rem;
+    font-size: 1.3rem;
+}
+
+.container{
+    width: 60%;
+    margin: 0 auto;
+    background: var(--color);
+}
+.img {
+    width: 100%;
+    filter:blur(var(--blur));
+    padding: var(--spacing);
+}

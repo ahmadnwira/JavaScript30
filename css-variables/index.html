@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Day3</title>
+</head>
+
+<body>
+
+    <div class="controls">
+        <div class="control__element">
+            <label for="spacing">spacing</label>
+            <input type="range" id="spacing" min='10' max='100' value="10" data-sizing="px">
+        </div>
+
+        <div class="control__element">
+            <label for="blur">blur</label>
+            <input type="range" id="blur" min='0' max='10' value="0" data-sizing="px">
+        </div>
+
+        <div class="control__element">
+            <label for="color">color</label>
+            <input type="color" id="color" value="#FAD6B5">
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="./img.jpeg" class="img">
+    </div>
+
+    <script>
+        const img = document.querySelector('.img');
+
+        let handleUpdate = (e) => {
+            const suffix = e.target.dataset.sizing || '';
+
+            document.documentElement.style.setProperty(`--${e.target.id}`, e.target.value + suffix);
+        };
+
+        const conrols = document.querySelectorAll('input');
+        conrols.forEach(control => {control.addEventListener('change', handleUpdate)});
+    </script>
+
+</body>
+
+</html>
