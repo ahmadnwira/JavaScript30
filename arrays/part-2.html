@@ -47,8 +47,15 @@
     // Find the comment with this ID
     // delete the comment with the ID of 823423
     const commentIndex = comments.findIndex( comment => {return comment.id == 823423});
-    comments.splice(commentIndex, 1);
-    console.table(comments);
+    // comments.splice(commentIndex, 1);
+    // console.table(comments);
+
+    // Avoid mutation
+    const newComments = [
+      ...comments.slice(0, commentIndex),
+      ...comments.slice(commentIndex+1)
+    ]
+    console.log(newComments);
 
   </script>
 </body>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Flex</title>
+</head>
+<body>
+    <div class="continaer">
+        <div class="panel open panel_1">
+            <p class="panel__text">top</p>
+            <p class="panel__text">panel-1</p>
+            <p class="panel__text">bottom</p>
+        </div>
+
+        <div class="panel panel_2">
+            <p class="panel__text">top</p>
+            <p class="panel__text">panel-2</p>
+            <p class="panel__text">bottom</p>
+        </div>
+
+        <div class="panel panel_3">
+            <p class="panel__text">top</p>
+            <p class="panel__text">panel-3</p>
+            <p class="panel__text">bottom</p>
+        </div>
+
+        <div class="panel panel_4">
+            <p class="panel__text">top</p>
+            <p class="panel__text">panel-4</p>
+            <p class="panel__text">bottom</p>
+        </div>
+    </div>
+
+    <script>
+        const panels = document.querySelectorAll('.panel');
+
+        let openPanel = e => {
+            // panels.forEach(panel => { panel.classList.remove("panel_open") });
+            e.target.classList.toggle('panel_open');
+        };
+
+        panels.forEach(panel => {panel.addEventListener('click', openPanel)});
+    </script>
+</body>
+</html>
