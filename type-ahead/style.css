@@ -1,0 +1,47 @@
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: 'helvetica neue';
+}
+
+.search-form {
+    max-width: 30%;
+    margin: 50px auto;
+}
+
+.search {
+    width: 100%;
+    outline: 0;
+    border: 10px solid #F7F7F7;
+    border-radius: 5px;
+    font-size: 28px;
+}
+
+.suggestions {
+    margin-top: 1rem;
+    padding: 0;
+    position: relative;
+}
+
+.suggestions li {
+    background: white;
+    list-style: none;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    transition: background 0.2s;
+    display: flex;
+    text-transform: capitalize;
+    justify-content: space-between;
+}
+
+.population {
+    font-size: 15px;
+}
+
+.hl {
+    background: #ffc600;
+}
