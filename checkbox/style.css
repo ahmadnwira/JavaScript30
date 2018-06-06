@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: orange;
+}
+
+.inbox {
+    max-width: 30%;
+    margin: 0 auto;
+    background: white;
+    margin-top: 4rem;
+    box-shadow: 4px 4px 4px 2px rgb(199, 135, 17);
+    border-radius: 3px;
+    padding: 1rem 2rem;
+}
+
+.inbox input:checked+p {
+    text-decoration: line-through;
+}
+
+.item {
+    display: flex;
+}

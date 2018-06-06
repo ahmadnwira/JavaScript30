@@ -30,7 +30,7 @@
         ctx.strokeStyle = "#BADA55";
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
-
+        ctx.globalCompositeOperation = "screen";
         let isDrawing = false;
         let lastY = 0;
         let lastX = 0;
@@ -55,7 +55,7 @@
                 hue = 0;
             }
 
-            if(ctx.lineWidth >= 50 || ctx.lineWidth < 2){
+            if(ctx.lineWidth >= 100 || ctx.lineWidth < 2){
                 direction = ! direction
             }
             if(direction){
