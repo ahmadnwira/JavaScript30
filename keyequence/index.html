@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Sequence </title>
+</head>
+
+<body>
+    <h3 style="text-align: center">open the console and pres ⬆️⬇️⬅️➡️</h3>
+    <script>
+        let i = 0;
+        let getSequence = e => {
+            const key = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+
+            e.key === key[i] ? i++ : i=0;
+
+            if(i=== key.length){
+                i = 0;
+                console.log('welcome to the secret club!');
+            }
+        };
+
+        window.addEventListener('keyup', getSequence);
+    </script>
+</body>
+
+</html>
