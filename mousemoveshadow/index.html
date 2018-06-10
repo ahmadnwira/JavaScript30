@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>👀-👀</title>
+
+    <style>
+        body {
+            background: dodgerblue;
+            color: #fff;
+            font-family: sans-serif;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            /* x-axis, y-axis, blur */
+            text-shadow: 10px 10px 0px rgb(11, 102, 194);
+            font-size: 100px;
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="h">Move Your Mouse 👀</h1>
+    </div>
+    <script>
+        const txt = document.querySelector('#h');
+        const container = document.querySelector('.container');
+
+        let moveShadow = e => {
+            const [width, height] = [container.offsetWidth, container.offsetHeight];
+            let [X, Y] = [e.offsetX, e.offsetY];
+
+
+            if(this !== e.target){
+                X = X + e.target.offsetLeft;
+                Y = Y + e.target.offsetTop;
+            }
+            txt.style.textShadow = `${(X/width*50)-20}px ${(Y/height*50)-20}px 0px rgb(11, 102, 194)`;
+        }
+
+        container.addEventListener('mousemove', moveShadow);
+    </script>
+</body>
+
+</html>
