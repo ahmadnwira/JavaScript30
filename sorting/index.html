@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sorting</title>
+    <style>
+        body {
+            background: dodgerblue;
+        }
+
+        #bands {
+            background: #fff;
+            padding: 2rem;
+            width: 33%;
+            margin: 0 auto;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="bands">
+    </ul>
+    <script>
+        const bands = ['The Plot in You', 'The Devil Wears Prada',
+            'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State',
+            'We Came as Romans', 'Counterparts', 'Oh, Sleeper',
+            'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
+        ];
+
+        let skipArticles = band => {
+            bandArray = band.split(" ");
+            if (bandArray[0] == 'The' || bandArray[0] == 'A' || bandArray[0] == 'An') {
+                return bandArray.slice(1).join(" ");
+            }
+            return band;
+        }
+
+
+        let sorted = bands.sort((a, b) => skipArticles(a) > skipArticles(b) ? 1 : -1)
+
+
+        document.querySelector('#bands').innerHTML =sorted.map(band => `<li>${band}</li>`).join('');
+
+    </script>
+</body>
+
+</html>
