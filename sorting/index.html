@@ -9,14 +9,17 @@
     <style>
         body {
             background: dodgerblue;
+            font-family: sans-serif;
         }
 
         #bands {
             background: #fff;
             padding: 2rem;
             width: 33%;
-            margin: 0 auto;
+            margin: 4rem auto;
             font-size: 22px;
+            box-shadow: 0px 0px 10px rgb(2, 86, 170);
+            border-radius: 3px;
         }
     </style>
 </head>
@@ -32,19 +35,22 @@
             'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
         ];
 
-        let skipArticles = band => {
-            bandArray = band.split(" ");
-            if (bandArray[0] == 'The' || bandArray[0] == 'A' || bandArray[0] == 'An') {
-                return bandArray.slice(1).join(" ");
-            }
-            return band;
-        }
+        // let skipArticles = band => {
+        //     bandArray = band.split(" ");
+        //     if (bandArray[0] == 'The' || bandArray[0] == 'A' || bandArray[0] == 'An') {
+        //         return bandArray.slice(1).join(" ");
+        //     }
+        //     return band;
+        // }
 
+        let skipArticles = band => {
+            // ^ -> starts with -- i -> insestive --'|' -> 'or' operator
+            return band.replace(/^The |A |An /i, '');
+        }
 
         let sorted = bands.sort((a, b) => skipArticles(a) > skipArticles(b) ? 1 : -1)
 
-
-        document.querySelector('#bands').innerHTML =sorted.map(band => `<li>${band}</li>`).join('');
+        document.querySelector('#bands').innerHTML = sorted.map(band => `<li>${band}</li>`).join('');
 
     </script>
 </body>
