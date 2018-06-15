@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>startup sim</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <form class="paramters">
+            <div class="input">
+                <label for="inflation">Inflation rate:</label>
+                <input type="number" min="1" max="20" id="inflation" value="10">
+            </div>
+
+            <div class="input">
+                <label for="rent">rent:</label>
+                <input type="number" min="3000" id="rent" value="3000">
+            </div>
+
+            <div class="input">
+                <label for="seed">intial fund:</label>
+                <input type="number" min="100000" id="seed" value="100000">
+            </div>
+
+            <input type="submit" value="start sim">
+
+            <p class="result">How Long Will Your Company Stay in Business?</p>
+        </form>
+
+        <ul class="actions">
+            <li class="actions__head">Take Action</li>
+            <li class="actions__item">new feature!</li>
+            <li class="actions__item">pivot business?</li>
+            <li class="actions__item">initial coin offering</li>
+        </ul>
+
+    </div>
+
+    <script src="./scripts/herlpers.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
