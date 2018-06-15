@@ -13,13 +13,13 @@ form.addEventListener('submit', e => {
         'makeMoney': Number(.05),
         'loseMoney': Number(.33),
     });
-
     result.innerHTML = "How Long Will Your Company Stay in Business?";
 });
 
 worker.onmessage = function (e) {
     const mean = getMean(e.data);
     const SD = getSD(e.data, mean).toFixed(3);
-
     result.innerHTML = `your bussines will last for ${Math.round(mean)} day with SD ${SD}`;
 }
+
+

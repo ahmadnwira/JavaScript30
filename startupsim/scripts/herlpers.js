@@ -8,10 +8,10 @@ let getMean = data => {
 
 let getSD = (data, mean) => {
     const sq = data.reduce((sum, value) => {
-        return sum = Math.pow((value - mean), 2);
+        return sum += Math.pow((value - mean), 2);
     }, 0);
 
-    const variance = sq / (data.length - 1);
+    const variance = sq / (data.length);
 
     return Math.sqrt(variance);
 }

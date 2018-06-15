@@ -21,6 +21,8 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 0;
+    align-items: baseline;
+    margin:.5rem 0;
 }
 
 .paramters {

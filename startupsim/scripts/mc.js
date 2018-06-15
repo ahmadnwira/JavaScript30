@@ -5,26 +5,26 @@ self.onmessage = function (e) {
     let getFunded = .05; /* probality of getting funded increases every year by 1%*/
     const trials = 100;
 
-    let startup = (seedFund, inflation, rent) => {
+    let startup = (fund, inflation, rent) => {
         let days = 0;
-        seedFund -= rent;
-        while (seedFund > 0) {
+        fund -= rent;
+        while (fund > 0) {
             const rand = Math.random();
             if (rand <= makeMoney) {
-                seedFund += 500;
+                fund += 500;
             }
             if (rand <= loseMoney) {
-                seedFund -= 500;
+                fund -= 500;
             }
             if (days % 30 === 0) {
-                seedFund = seedFund - rent;
+                fund = fund - rent;
             }
             if (days % 365 === 0) {
                 rent += rent * inflation;
                 getFunded += .01;
             }
             if (Math.random <= getFunded) {
-                seedFund += 100000;
+                fund += 100000;
             }
             days++;
         }
