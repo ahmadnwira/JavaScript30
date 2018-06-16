@@ -7,4 +7,4 @@ to install dependacies `$ npm install`
 
 to build `npm run build`
 
-*you will need yo use localserver with chrome*
+*you will need to use a local server with chrome*
