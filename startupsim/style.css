@@ -7,7 +7,7 @@ body {
 
 .app {
     width: 80%;
-    max-width: 1024px;
+    max-width: 1920px;
     margin: 4rem auto;
     background: #fff;
     padding: 1rem;
@@ -17,25 +17,29 @@ body {
 }
 
 .input {
-    max-width: 300px;
+    max-width: 420px;
     display: flex;
     justify-content: space-between;
     margin: 0;
     align-items: baseline;
-    margin:.5rem 0;
+    margin: 1rem 2rem;
+}
+.result{
+    text-align: center;
 }
 
 .paramters {
-    flex: 1;
+    flex: 1.5;
 }
 
-.actions {
+.list {
     list-style: none;
     padding: 0;
     flex: 1;
+    margin: 0 1rem;
 }
 
-.actions__head {
+.list__head {
     text-align: center;
     background: #3b3b3b;
     padding: 1rem;
@@ -43,13 +47,13 @@ body {
     color: #fff;
 }
 
-.actions__item {
+.list__item {
     padding: .5rem .25rem;
     color: #4b4b4b;
     border-bottom: 1px solid #e9e9e9;
 }
 
-.actions__item:hover {
+.list__item:hover {
     background: #e9e9e9;
     cursor: pointer;
 }

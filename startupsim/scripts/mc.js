@@ -1,45 +1,29 @@
-self.onmessage = function (e) {
-    let makeMoney = e.data['makeMoney']; /* 5% probality of making 1k/day */
-    let loseMoney = e.data['loseMoney']; /* 30% probality of losing 1k/day */
+import { getMean, getSD } from './herlpers';
 
-    let getFunded = .05; /* probality of getting funded increases every year by 1%*/
-    const trials = 100;
 
-    let startup = (fund, inflation, rent) => {
-        let days = 0;
-        fund -= rent;
-        while (fund > 0) {
-            const rand = Math.random();
-            if (rand <= makeMoney) {
-                fund += 500;
-            }
-            if (rand <= loseMoney) {
-                fund -= 500;
-            }
-            if (days % 30 === 0) {
-                fund = fund - rent;
-            }
-            if (days % 365 === 0) {
-                rent += rent * inflation;
-                getFunded += .01;
-            }
-            if (Math.random <= getFunded) {
-                fund += 100000;
-            }
-            days++;
-        }
-        return days;
+export class MCMode {
+    constructor() {
+        this.result = document.querySelector('.result');
+        this.worker = new Worker('./scripts/mcWorker.js');
+        this.worker.onmessage = function (e) {
+            const mean = getMean(e.data);
+            const SD = getSD(e.data, mean).toFixed(3);
+            this.result.innerHTML =
+                `will last for (${(mean-(1.96*SD)).toFixed(0)}-${(mean+(1.96*SD)).toFixed(0)})/days 95% of the time`;
+        }.bind(this)
     }
 
-    let sim = (trials, seedFund, inflation, rent) => {
-        let exp = [];
-        for (let i = 0; i <= trials; i++) {
-            exp.push(startup(seedFund, inflation, rent));
-        }
-        return exp;
-    };
-
-    const res = sim(trials, e.data['seed'], e.data['inflation'], e.data['rent']);
-
-    self.postMessage(res);
+    run(e) {
+        this.worker.postMessage({
+            'inflation': e.target.querySelector('#inflation').value / 100,
+            'rent': Number(e.target.querySelector('#rent').value),
+            'fund': Number(e.target.querySelector('#fund').value),
+            'trials': Number(e.target.querySelector('#trials').value),
+            'makeMoney': .05,
+            'loseMoney': .33,
+            getFunded: .01,
+            days: 0
+        });
+        this.result.innerHTML = "calculating";
+    }
 }

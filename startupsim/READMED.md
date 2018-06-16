@@ -1,5 +1,10 @@
 # Startup Sim using MCS
 
-## notice
+## Getting Started
 
-you will need to run a server if you are using chrome
+Clone the repo
+to install dependacies `$ npm install`
+
+to build `npm run build`
+
+*you will need yo use localserver with chrome*

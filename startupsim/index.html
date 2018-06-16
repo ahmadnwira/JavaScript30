@@ -24,29 +24,42 @@
             </div>
 
             <div class="input">
-                <label for="seed">intial fund:</label>
-                <input type="number" min="100000" id="seed" value="100000">
+                <label for="fund">intial fund:</label>
+                <input type="number" min="50000" id="fund" value="100000">
+            </div>
+
+            <div class="input">
+                <label for="trials">tirals:</label>
+                <input type="number" min="100" max="500000" id="trials" value="100">
             </div>
 
             <div class="input">
                 <input type="submit" value="start sim">
-                <label for="seed"> make descions:</label>
-                <input type="checkbox">
+                <div>
+                    <label for="seed"> make descions:</label>
+                    <input type="checkbox">
+                </div>
             </div>
             <p class="result">How Long Will Your Company Stay in Business?</p>
         </form>
 
-        <ul class="actions">
-            <li class="actions__head">Take Action</li>
-            <li class="actions__item">new feature!</li>
-            <li class="actions__item">pivot business?</li>
-            <li class="actions__item">initial coin offering</li>
+
+        <ul class="list">
+            <li class="list__head">Take Action</li>
+            <li class="list__item action" id='feature'>new feature</li>
+            <li class="list__item action" id='pivot'>pivot</li>
+            <li class="list__item action" id='ico'>initial coin offering</li>
+        </ul>
+
+        <ul class="list">
+            <li class="list__head">Log</li>
+            <li class="list__item" id="displayFund">Fund: </li>
+            <li class="list__item" id="displayDays">Days: </li>
         </ul>
 
     </div>
 
-    <script src="./scripts/herlpers.js"></script>
-    <script src="./app.js"></script>
+    <script src="./dist/bundle.js"></script>
 </body>
 
 </html>
