@@ -53,6 +53,7 @@ export class GameMode {
                 this.params.makeMoney += .05;
                 this.params.loseMoney -= .02;
             }
+            this.params.fund -= 10000;
         }
     }
 
