@@ -21,7 +21,7 @@ let step = (params) => {
     if (rand <= params.makeMoney) {
         params.fund += 500;
     }
-    if (rand <= params.loseMoney) {
+    else if (rand <= params.loseMoney) {
         params.fund -= 500;
     }
     if (params.days % 30 === 0) {
